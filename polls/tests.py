@@ -43,7 +43,7 @@ def create_question(question_text, days):
     return Question.objects.create(question_text=question_text, publish_date=time)
 
 class QuestionIndexViewTests(TestCase):
-    def test_no_questions(self):
+    def test_no_question(self):
         """
         If no questions exist, an appropriate message is displayed.
         """
@@ -52,7 +52,7 @@ class QuestionIndexViewTests(TestCase):
         self.assertContains(response, "No polls are available.")
         self.assertQuerySetEqual(response.context["latest_question_list"], [])
 
-    def test_past_questions(self):
+    def test_past_question(self):
         """
         Questions with a pub_date in the past are displayed on the index page.
         """
