@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Question
+from .models import Choice, Question
 
 class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -8,5 +8,6 @@ class QuestionAdmin(admin.ModelAdmin):
         ("Date information", {"fields": ["publish_date"]})
     ]
 
+admin.site.register(Choice)
 admin.site.register(Question, QuestionAdmin)
 
