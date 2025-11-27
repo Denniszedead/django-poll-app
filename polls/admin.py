@@ -7,6 +7,7 @@ class ChoiceInline(admin.TabularInline):
     extra = 3
 
 class QuestionAdmin(admin.ModelAdmin):
+    list_display = ["question_text", "publish_date", "was_published_recently"]
     fieldsets = [
         (None, {"fields": ['question_text']}),
         ("Date information", {"fields": ["publish_date"], "classes": ["collapse"]})
