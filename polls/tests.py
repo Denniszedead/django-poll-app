@@ -43,7 +43,7 @@ def create_question(question_text, days):
     return Question.objects.create(question_text=question_text, publish_date=time)
 
 class QuestionIndexViewTests(TestCase):
-    def test_no_question(self):
+    def test_no_questions(self):
         """
         If no questions exist, an appropriate message is displayed.
         """
